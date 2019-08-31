@@ -1,6 +1,6 @@
 import {TestService} from './test.service';
 import {TestModel} from './models/test.model';
-import {Query, Resolver} from '@nestjs/graphql';
+import {Query, ResolveProperty, Resolver} from '@nestjs/graphql';
 
 @Resolver(of => TestModel)
 export class TestResolver {
@@ -10,5 +10,10 @@ export class TestResolver {
     @Query(type => [TestModel])
     async tests() {
         return this.testService.findAll();
+    }
+
+    @ResolveProperty('authorName', () => String)
+    getAuthorName(): Promise<string> {
+        return this.testService.getAuthorName();
     }
 }

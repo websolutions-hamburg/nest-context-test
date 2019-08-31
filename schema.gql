@@ -64,4 +64,5 @@ type Subscription {
 type TestModel {
   id: String!
   name: String!
+  authorName: String!
 }

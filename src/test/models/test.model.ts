@@ -7,4 +7,7 @@ export class TestModel {
 
     @Field()
     name: string;
+
+    @Field()
+    authorName: string;
 }
