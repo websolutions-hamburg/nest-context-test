@@ -9,11 +9,9 @@ export class RequestService {
     private readonly request: Request;
 
     constructor(
-        @Inject(CONTEXT)
+//        @Inject(CONTEXT)
+        @Inject(forwardRef(() => CONTEXT))
         private readonly context: {request: Request},
-
-        @Inject(forwardRef(() => BookService))
-        private readonly bookService: BookService,
     ) {
         if (context.request) {
             this.request = context.request;

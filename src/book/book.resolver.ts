@@ -32,10 +32,10 @@ export class BookResolver {
     return this.bookService.getRecipes();
   }
 
-  @ResolveProperty('author', () => Author)
-  getAuthor(): Promise<Author> {
-    return this.bookService.getAuthor();
-  }
+//  @ResolveProperty('author', () => Author)
+//  getAuthor(): Promise<Author> {
+//    return this.bookService.getAuthor();
+//  }
 
   @ResolveProperty('haribo', () => [HariboModel])
   getHaribo(): Promise<HariboModel[]> {

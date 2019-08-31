@@ -8,7 +8,6 @@ import {AuthorModule} from '../author/author.module';
 
 @Module({
     imports: [
-      forwardRef(() => BookModule),
       forwardRef(() => AuthorModule),
     ],
     providers: [TestService, TestResolver, RequestService],

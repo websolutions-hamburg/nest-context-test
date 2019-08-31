@@ -9,7 +9,7 @@ import {HariboModule} from '../haribo/haribo.module';
 @Module({
   imports: [
     RecipesModule,
-    AuthorModule,
+//    AuthorModule,
     HariboModule,
   ],
   providers: [BookResolver, BookService, RequestService],

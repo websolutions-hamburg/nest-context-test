@@ -13,7 +13,6 @@ type Book {
   id: ID!
   color: String!
   recipes: [Recipe!]!
-  author: Author!
   haribo: [HariboModel!]!
 }
 
@@ -23,7 +22,6 @@ scalar Date
 type HariboModel {
   id: String!
   name: String!
-  bookColor: String!
 }
 
 type Mutation {
@@ -42,10 +40,10 @@ type Query {
   recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
   book(id: String!): Book!
   books: [Book!]!
+  haribos: [HariboModel!]!
+  tests: [TestModel!]!
   author(id: String!): Author!
   authors: [Author!]!
-  tests: [TestModel!]!
-  haribos: [HariboModel!]!
 }
 
 type Recipe {

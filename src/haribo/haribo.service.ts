@@ -7,11 +7,10 @@ import {BookService} from '../book/book.service';
 export class HariboService {
 
     constructor(
-        @Inject(forwardRef(() => RequestService))
         private readonly requestService: RequestService,
 
-        @Inject(forwardRef(() => BookService))
-        private readonly bookService: BookService,
+//        @Inject(forwardRef(() => BookService))
+//        private readonly bookService: BookService,
     ) {}
 
     public async findAll(): Promise<HariboModel[]> {
@@ -19,8 +18,8 @@ export class HariboService {
         return [{id: '1', name: 'Haribo'}] as HariboModel[];
     }
 
-    async getBookColor(): Promise<string> {
-        const book = await this.bookService.findOneById('1');
-        return book.color;
-    }
+//    async getBookColor(): Promise<string> {
+//        const book = await this.bookService.findOneById('1');
+//        return book.color;
+//    }
 }

@@ -14,8 +14,8 @@ export class Book {
   @Field(type => [Recipe])
   recipes: Recipe[];
 
-  @Field(type => Author)
-  author: Author;
+//  @Field(type => Author)
+//  author: Author;
 
   @Field(type => HariboModel)
   haribo: HariboModel;

@@ -9,11 +9,11 @@ export class HariboResolver {
 
     @Query(type => [HariboModel])
     async haribos() {
-        return this.haribos().findAll();
+        return this.hariboService.findAll();
     }
 
-    @ResolveProperty('bookColor', () => String)
-    getBookColor(): Promise<string> {
-        return this.hariboService.getBookColor();
-    }
+//    @ResolveProperty('bookColor', () => String)
+//    getBookColor(): Promise<string> {
+//        return this.hariboService.getBookColor();
+//    }
 }

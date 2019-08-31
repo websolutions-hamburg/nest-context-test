@@ -15,7 +15,6 @@ export class RecipesService {
    */
 
   constructor(
-      @Inject(forwardRef(() => RequestService))
       private readonly requestService: RequestService,
 
       @Inject(forwardRef(() => BookService))

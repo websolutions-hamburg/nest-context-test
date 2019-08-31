@@ -7,9 +7,9 @@ import {TestService} from '../test/test.service';
 export class AuthorService {
 
   constructor(
-      @Inject(forwardRef(() => RequestService))
       private readonly requestService: RequestService,
 
+      @Inject(forwardRef(() => TestService))
       private readonly testService: TestService,
   ) {}
 
@@ -19,6 +19,7 @@ export class AuthorService {
   }
 
   async findAll(): Promise<Author[]> {
+    console.log('Request available in author service:', this.requestService.isAvailable());
     return [{id: '1', name: 'The Author'}] as Author[];
   }
 

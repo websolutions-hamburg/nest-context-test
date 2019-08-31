@@ -7,7 +7,6 @@ import {AuthorService} from '../author/author.service';
 export class TestService {
 
     constructor(
-        @Inject(forwardRef(() => RequestService))
         private readonly requestService: RequestService,
 
         @Inject(forwardRef(() => AuthorService))

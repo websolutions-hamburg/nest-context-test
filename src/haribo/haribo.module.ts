@@ -7,7 +7,7 @@ import {RecipesModule} from '../recipes/recipes.module';
 
 @Module({
     imports: [
-        forwardRef(() => BookModule),
+//        forwardRef(() => BookModule),
     ],
     providers: [HariboService, HariboResolver, RequestService],
     exports: [HariboService],

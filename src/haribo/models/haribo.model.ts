@@ -8,6 +8,6 @@ export class HariboModel {
     @Field()
     name: string;
 
-    @Field()
-    bookColor: string;
+//    @Field()
+//    bookColor: string;
 }

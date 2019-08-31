@@ -12,13 +12,12 @@ import {HariboModel} from '../haribo/models/haribo.model';
 export class BookService {
 
   constructor(
-      @Inject(forwardRef(() => RequestService))
       private readonly requestService: RequestService,
 
       @Inject(forwardRef(() => RecipesService))
       private readonly recipesService: RecipesService,
 
-      private readonly authorService: AuthorService,
+//      private readonly authorService: AuthorService,
 
       private readonly hariboService: HariboService,
   ) {}
@@ -36,9 +35,9 @@ export class BookService {
     return this.recipesService.findAll();
   }
 
-  async getAuthor(): Promise<Author> {
-    return this.authorService.findOneById('1');
-  }
+//  async getAuthor(): Promise<Author> {
+//    return this.authorService.findOneById('1');
+//  }
 
   async getHaribo(): Promise<HariboModel[]> {
     return this.hariboService.findAll();
