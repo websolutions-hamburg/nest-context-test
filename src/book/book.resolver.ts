@@ -4,6 +4,7 @@ import {Recipe} from '../recipes/models/recipe';
 import {Book} from './models/book';
 import {BookService} from './book.service';
 import {Author} from '../author/models/author';
+import {HariboModel} from '../haribo/models/haribo.model';
 
 @Resolver(of => Book)
 export class BookResolver {
@@ -34,5 +35,10 @@ export class BookResolver {
   @ResolveProperty('author', () => Author)
   getAuthor(): Promise<Author> {
     return this.bookService.getAuthor();
+  }
+
+  @ResolveProperty('haribo', () => [HariboModel])
+  getHaribo(): Promise<HariboModel[]> {
+    return this.bookService.getHaribo();
   }
 }

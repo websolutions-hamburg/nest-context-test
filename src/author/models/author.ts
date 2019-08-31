@@ -1,4 +1,5 @@
 import { Field, ID, ObjectType } from 'type-graphql';
+import {TestModel} from '../../test/models/test.model';
 
 @ObjectType()
 export class Author {
@@ -7,4 +8,7 @@ export class Author {
 
   @Field()
   name: string;
+
+  @Field(type => TestModel)
+  testName: string;
 }

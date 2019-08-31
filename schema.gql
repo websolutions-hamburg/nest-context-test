@@ -6,6 +6,7 @@
 type Author {
   id: ID!
   name: String!
+  testName: String!
 }
 
 type Book {
@@ -13,10 +14,17 @@ type Book {
   color: String!
   recipes: [Recipe!]!
   author: Author!
+  haribo: [HariboModel!]!
 }
 
 """Date custom scalar type"""
 scalar Date
+
+type HariboModel {
+  id: String!
+  name: String!
+  bookColor: String!
+}
 
 type Mutation {
   addRecipe(newRecipeData: NewRecipeInput!): Recipe!
@@ -36,6 +44,8 @@ type Query {
   books: [Book!]!
   author(id: String!): Author!
   authors: [Author!]!
+  tests: [TestModel!]!
+  haribos: [HariboModel!]!
 }
 
 type Recipe {
@@ -49,4 +59,9 @@ type Recipe {
 
 type Subscription {
   recipeAdded: Recipe!
+}
+
+type TestModel {
+  id: String!
+  name: String!
 }

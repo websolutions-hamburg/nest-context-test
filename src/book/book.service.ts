@@ -5,6 +5,8 @@ import {RequestService} from '../request/request.service';
 import {Book} from './models/book';
 import {AuthorService} from '../author/author.service';
 import {Author} from '../author/models/author';
+import {HariboService} from '../haribo/haribo.service';
+import {HariboModel} from '../haribo/models/haribo.model';
 
 @Injectable()
 export class BookService {
@@ -16,8 +18,9 @@ export class BookService {
       @Inject(forwardRef(() => RecipesService))
       private readonly recipesService: RecipesService,
 
-//      @Inject(forwardRef(() => AuthorService))
       private readonly authorService: AuthorService,
+
+      private readonly hariboService: HariboService,
   ) {}
 
   async findOneById(id: string): Promise<Book> {
@@ -35,5 +38,9 @@ export class BookService {
 
   async getAuthor(): Promise<Author> {
     return this.authorService.findOneById('1');
+  }
+
+  async getHaribo(): Promise<HariboModel[]> {
+    return this.hariboService.findAll();
   }
 }

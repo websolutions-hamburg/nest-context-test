@@ -20,9 +20,6 @@ export class RecipesService {
 
       @Inject(forwardRef(() => BookService))
       private readonly bookService: BookService,
-
-//      @Inject(forwardRef(() => AuthorService))
-//      private readonly authorService: AuthorService,
   ) {}
 
   async create(data: NewRecipeInput): Promise<Recipe> {

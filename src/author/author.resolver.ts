@@ -1,5 +1,5 @@
 import { NotFoundException } from '@nestjs/common';
-import {Args, Query, Resolver} from '@nestjs/graphql';
+import {Args, Query, ResolveProperty, Resolver} from '@nestjs/graphql';
 import {AuthorService} from './author.service';
 import {Author} from './models/author';
 
@@ -22,5 +22,10 @@ export class AuthorResolver {
   @Query(returns => [Author])
   authors(): Promise<Author[]> {
     return this.authorService.findAll();
+  }
+
+  @ResolveProperty('testName', () => String)
+  getTestName(): Promise<string> {
+    return this.authorService.getTestName();
   }
 }
