@@ -8,7 +8,6 @@ import {RecipesModule} from '../recipes/recipes.module';
 @Module({
     imports: [
       forwardRef(() => BookModule),
-      RecipesModule,
     ],
     providers: [TestService, TestResolver, RequestService],
     exports: [TestService],

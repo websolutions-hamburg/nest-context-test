@@ -8,7 +8,8 @@ import {HariboModule} from '../haribo/haribo.module';
 
 @Module({
   imports: [
-    forwardRef(() => RecipesModule),
+//    forwardRef(() => RecipesModule),
+    RecipesModule,
     AuthorModule,
     HariboModule,
   ],

@@ -14,9 +14,6 @@ export class RequestService {
 
         @Inject(forwardRef(() => BookService))
         private readonly bookService: BookService,
-
-        @Inject(forwardRef(() => RecipesService))
-        private readonly recipesService: RecipesService,
     ) {
         if (context.request) {
             this.request = context.request;

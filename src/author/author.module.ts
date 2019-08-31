@@ -9,7 +9,6 @@ import {TestModule} from '../test/test.module';
 @Module({
   imports: [
     forwardRef(() => BookModule),
-    RecipesModule,
     TestModule,
   ],
   providers: [AuthorResolver, AuthorService, RequestService],

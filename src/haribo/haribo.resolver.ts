@@ -12,8 +12,8 @@ export class HariboResolver {
         return this.haribos().findAll();
     }
 
-//    @ResolveProperty('bookColor', () => String)
-//    getBookColor(): Promise<string> {
-//        return this.hariboService.getBookColor();
-//    }
+    @ResolveProperty('bookColor', () => String)
+    getBookColor(): Promise<string> {
+        return this.hariboService.getBookColor();
+    }
 }
