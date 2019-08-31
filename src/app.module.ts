@@ -1,12 +1,16 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import {BookModule} from './book/book.module';
 import { RecipesModule } from './recipes/recipes.module';
-import {CarModule} from './car/car.module';
+import {TestModule} from './test/test.module';
+import {AuthorModule} from './author/author.module';
 
 @Module({
   imports: [
+    BookModule,
     RecipesModule,
-    CarModule,
+//    TestModule,
+    AuthorModule,
     GraphQLModule.forRoot({
       installSubscriptionHandlers: true,
       autoSchemaFile: 'schema.gql',

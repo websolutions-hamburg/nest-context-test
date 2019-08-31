@@ -16,4 +16,7 @@ export class Recipe {
 
   @Field(type => [String])
   ingredients: string[];
+
+  @Field()
+  color: string;
 }

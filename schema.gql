@@ -3,10 +3,16 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type Car {
+type Author {
+  id: ID!
+  name: String!
+}
+
+type Book {
   id: ID!
   color: String!
-  recipeDescription: String!
+  recipes: [Recipe!]!
+  author: Author!
 }
 
 """Date custom scalar type"""
@@ -26,8 +32,10 @@ input NewRecipeInput {
 type Query {
   recipe(id: String!): Recipe!
   recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
-  car(id: String!): Car!
-  cars: [Car!]!
+  book(id: String!): Book!
+  books: [Book!]!
+  author(id: String!): Author!
+  authors: [Author!]!
 }
 
 type Recipe {
@@ -36,6 +44,7 @@ type Recipe {
   description: String
   creationDate: Date!
   ingredients: [String!]!
+  color: String!
 }
 
 type Subscription {

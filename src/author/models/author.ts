@@ -1,13 +1,10 @@
 import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
-export class Car {
+export class Author {
   @Field(type => ID)
   id: string;
 
   @Field()
-  color: string;
-
-  @Field()
-  recipeDescription: string;
+  name: string;
 }

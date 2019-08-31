@@ -1,5 +1,5 @@
 import { NotFoundException } from '@nestjs/common';
-import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
+import {Args, Mutation, Query, ResolveProperty, Resolver, Subscription} from '@nestjs/graphql';
 import { PubSub } from 'apollo-server-express';
 import { NewRecipeInput } from './dto/new-recipe.input';
 import { RecipesArgs } from './dto/recipes.args';
@@ -43,5 +43,10 @@ export class RecipesResolver {
   @Subscription(returns => Recipe)
   recipeAdded() {
     return pubSub.asyncIterator('recipeAdded');
+  }
+
+  @ResolveProperty('color', () => String)
+  getColor(): Promise<string> {
+    return this.recipesService.getColor();
   }
 }
